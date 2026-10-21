@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="AURUM: tienda y laboratorio de reparación de hardware en Granada. Componentes, PCs a medida, portátiles, móviles y consolas.">
+<meta property="og:title" content="AURUM · Hardware premium en Granada"><meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ComputerStore","name":"AURUM","telephone":"+34958000123","address":{"@type":"PostalAddress","streetAddress":"Calle Recogidas 25","postalCode":"18002","addressLocality":"Granada","addressCountry":"ES"},"openingHours":["Mo-Fr 10:00-20:00","Sa 10:00-14:00"]}</script>
+<title>AURUM — Tienda y laboratorio de hardware</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="w hd">
+<a class="logo" href="#inicio"><svg width="30" height="30" viewBox="0 0 34 34" fill="none" stroke="#f0c75e" stroke-width="1.6" aria-hidden="true"><path d="M17 2 31 10v14L17 32 3 24V10z"/><path d="M17 9 25 14v6l-8 5-8-5v-6z"/><circle cx="17" cy="17" r="2.2" fill="#f0c75e"/></svg>AURUM</a>
+<nav aria-label="Principal"><a href="#tienda">Tienda</a><a href="#configurador">Configurador</a><a href="#reparacion">Reparación</a><a href="#citas">Citas</a><a href="#nosotros">Nosotros</a><a href="#guias">Guías</a><a href="#contacto">Contacto</a></nav>
+<button class="btn cartbtn" id="cb" aria-label="Abrir carrito">Carrito<b id="cc">0</b></button>
+</div></header>
+
+<main id="inicio">
+<div class="hero2"><div class="w">
+<span class="tag">Granada · Tienda + laboratorio</span>
+<h1>Tu hardware, <span class="gold">en su mejor versión.</span></h1>
+<p>Compra componentes, PCs, portátiles, móviles y consolas. Y si algo falla, lo reparamos en nuestro taller.</p>
+<div class="cta" style="justify-content:center"><a class="btn fill" href="#tienda">Ver tienda</a><a class="btn" href="#reparacion">Reparar mi equipo</a></div>
+<div class="orb" aria-hidden="true"><i class="r1"></i><i class="r2"></i><i class="r3"></i><svg viewBox="0 0 220 90" fill="none" stroke="#f0c75e" stroke-width="2"><rect x="4" y="14" width="212" height="62" rx="8"/><circle cx="62" cy="45" r="24"/><circle cx="62" cy="45" r="5"/><path d="M62 21v48M38 45h48M45 28l34 34M79 28 45 62" stroke-width="1"/><circle cx="148" cy="45" r="24"/><circle cx="148" cy="45" r="5"/><path d="M148 21v48M124 45h48M131 28l34 34M165 28l-34 34" stroke-width="1"/></svg></div>
+<div class="chips"><span>Envío gratis desde 150 €</span><span>Recogida en tienda</span><span>Garantía por escrito</span><span>Seguimiento online</span></div>
+</div></div>
+
+<section class="s" id="tienda"><div class="w">
+<div class="sh"><div><span class="tag">Sección 01 · Tienda</span><h2>Componentes <span class="gold">para vender</span></h2></div><p>Precios de ejemplo con IVA incluido. Envío gratis en pedidos desde 150 €.</p></div>
+<div class="tabs" id="tabs" role="group" aria-label="Filtrar por categoría"></div>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section class="s" id="configurador"><div class="w">
+<div class="sh"><div><span class="tag">Configurador</span><h2>Monta tu <span class="gold">PC a medida</span></h2></div><p>Elige las piezas y comprobamos la compatibilidad y la potencia de la fuente.</p></div>
+<div class="box" id="cfg"></div></div></section>
+
+<div class="w brands" aria-label="Marcas que vendemos y reparamos"><span>NVIDIA</span><span>AMD</span><span>INTEL</span><span>ASUS</span><span>MSI</span><span>SAMSUNG</span><span>APPLE</span><span>SONY</span><span>NINTENDO</span><span>VALVE</span></div>
+
+<section class="s" id="reparacion"><div class="w">
+<div class="sh"><div><span class="tag">Sección 02 · Laboratorio</span><h2>Servicio de <span class="gold">reparaciones</span></h2></div><p>Diagnóstico profesional y seguimiento transparente de principio a fin.</p></div>
+<div class="svc">
+<div><h3>Reparación de PC</h3><p>Diagnóstico, limpieza, pasta térmica y sustitución de piezas.</p></div>
+<div><h3>Portátiles</h3><p>Pantallas, baterías, teclados, bisagras y placas.</p></div>
+<div><h3>Móviles</h3><p>Pantalla, batería, puertos de carga y daños por agua.</p></div>
+<div><h3>Consolas</h3><p>HDMI, sobrecalentamiento, ventilación y lectores.</p></div></div>
+<div class="trk" id="seguimiento"><div><span class="tag">Seguidor de estado</span><h3 class="gold">Consulta tu reparación</h3><p>Introduce el código de tu orden. Prueba con <b>AU-1234</b> para ver un ejemplo.</p>
+<form id="tf" class="row"><div><label for="code">Código de orden</label><input id="code" placeholder="AU-0000" autocomplete="off" required></div><button class="btn fill" type="submit">Consultar</button></form><div class="msg" id="tm" role="status"></div></div>
+<div class="job" id="job" aria-live="polite"></div></div>
+</div></section>
+
+<section class="s" id="presupuesto"><div class="w">
+<div class="sh"><div><span class="tag">Presupuesto online</span><h2>¿Cuánto cuesta <span class="gold">repararlo?</span></h2></div><p>Estimación orientativa (valores de ejemplo). El precio final se confirma tras el diagnóstico.</p></div>
+<div class="box"><div class="fg"><div><label for="rd">Dispositivo</label><select id="rd"></select></div><div><label for="rf">Avería</label><select id="rf"></select></div></div><div id="rr" class="rrs" aria-live="polite"></div><button class="btn fill" type="button" id="rbk">Reservar cita para esta avería</button></div>
+</div></section>
+
+<section class="s" id="citas"><div class="w">
+<div class="sh"><div><span class="tag">Citas y tasación</span><h2>Reserva tu <span class="gold">cita</span> o vende tu equipo</h2></div><p>Te confirmamos la cita por teléfono o correo.</p></div>
+<div class="ct">
+<div class="box"><h3>Reservar cita en el taller</h3><form id="bk"><label for="bn">Nombre</label><input id="bn" required><label for="bt">Teléfono</label><input id="bt" type="tel" required><div class="fg"><div><label for="bd">Fecha</label><input id="bd" type="date" required></div><div><label for="bh">Hora</label><select id="bh"></select></div></div><label for="bp">Equipo y avería</label><textarea id="bp" rows="3" required></textarea><div class="cta"><button class="btn fill" type="submit">Solicitar cita</button></div><div class="msg" id="bm" role="status"></div></form></div>
+<div class="box"><h3>Tasación de equipos usados</h3><form id="ts"><div class="fg"><div><label for="tt">Tipo</label><select id="tt"><option>Móvil</option><option>Portátil</option><option>PC</option><option>Consola</option><option>Tarjeta gráfica</option></select></div><div><label for="te">Estado</label><select id="te"><option>Como nuevo</option><option>Buen estado</option><option>Con daños</option><option>No funciona</option></select></div></div><label for="tm2">Marca y modelo</label><input id="tm2" required><label for="td">Descripción</label><textarea id="td" rows="3"></textarea><label for="tc">Tu correo</label><input id="tc" type="email" required><div class="cta"><button class="btn fill" type="submit">Pedir tasación</button></div><div class="msg" id="tsm" role="status"></div></form></div>
+</div></div></section>
+
+<section class="s" id="proceso"><div class="w">
+<div class="sh"><div><span class="tag">Cómo trabajamos</span><h2>Proceso en <span class="gold">cuatro pasos</span></h2></div></div>
+<div class="steps"><div><h3>Recepción</h3><p>Registramos tu equipo y te damos un código de seguimiento.</p></div><div><h3>Diagnóstico</h3><p>Te enviamos presupuesto cerrado antes de tocar nada.</p></div><div><h3>Reparación</h3><p>Piezas de calidad y pruebas de estrés finales.</p></div><div><h3>Entrega</h3><p>Recoges tu equipo con garantía por escrito.</p></div></div>
+</div></section>
+
+<section class="s" id="garantia"><div class="w">
+<div class="sh"><div><span class="tag">Por qué elegirnos</span><h2>Compra y repara con <span class="gold">confianza</span></h2></div></div>
+<div class="why">
+<div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.500-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><h3>Garantía por escrito</h3><p>Cada producto y reparación incluye garantía. Con la garantía legal vigente.</p></div>
+<div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><h3>Presupuesto cerrado</h3><p>Sabes el coste antes de que toquemos tu equipo.</p></div>
+<div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3>Seguimiento online</h3><p>Consulta cada fase con tu código de orden.</p></div>
+<div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v10H4zM8 8V5h8v3"/></svg><h3>Compra + reparación</h3><p>Todo en un mismo sitio: asesoramiento, venta y taller.</p></div>
+</div></div></section>
+
+<section class="s" id="nosotros"><div class="w">
+<div class="sh"><div><span class="tag">Sobre nosotros</span><h2>Un taller de <span class="gold">Granada</span></h2></div></div>
+<div class="ct"><div class="box"><p style="margin-top:0;color:var(--mut)">Somos un equipo de técnicos apasionados por el hardware. Vendemos componentes y equipos que nos gustaría usar, y reparamos lo que ya tienes con piezas de calidad y presupuesto cerrado. [Cuenta aquí tu historia, equipo y fotos del local.]</p><p style="color:var(--mut)">Calle Recogidas 25, Granada · Lun–Vie 10:00–20:00 · Sáb 10:00–14:00</p></div>
+<div class="box"><h3>Antes y después <small style="color:var(--mut);font:11px Manrope">(casos de ejemplo)</small></h3><ul class="info" style="margin-top:12px"><li><div><small>Portátil</small>Pantalla rota → pantalla nueva y prueba de 24 h.</div></li><li><div><small>Consola</small>Sobrecalentamiento → limpieza y pasta térmica nueva.</div></li><li><div><small>Móvil</small>Batería hinchada → batería nueva y sellado.</div></li></ul></div></div>
+</div></section>
+
+<section class="s" id="opiniones"><div class="w">
+<div class="sh"><div><span class="tag">Opiniones</span><h2>Lo que dicen <span class="gold">nuestros clientes</span></h2></div><p>Las tarjetas "ejemplo" son de muestra: sustitúyelas por opiniones reales.</p></div>
+<div class="grid" id="rv"></div>
+<div class="box" style="margin-top:20px"><h3>Deja tu opinión</h3><form id="rf2"><div class="fg"><div><label for="on">Nombre</label><input id="on" required></div><div><label for="os">Valoración</label><select id="os"><option value="5">★★★★★</option><option value="4">★★★★☆</option><option value="3">★★★☆☆</option><option value="2">★★☆☆☆</option><option value="1">★☆☆☆☆</option></select></div></div><label for="ot">Comentario</label><textarea id="ot" rows="3" required></textarea><div class="cta"><button class="btn fill" type="submit">Publicar</button></div></form></div>
+</div></section>
+
+<section class="s" id="guias"><div class="w">
+<div class="sh"><div><span class="tag">Guías</span><h2>Aprende con <span class="gold">AURUM</span></h2></div></div>
+<details><summary>Qué gráfica comprar según tu monitor</summary><p>1080p: RTX 5060 o RX 9060 XT. 1440p: RTX 5070, RTX 5070 Ti o RX 9070 XT. 4K: RTX 5080 o RTX 5090. Comprueba también que tu fuente tenga potencia suficiente: usa nuestro configurador.</p></details>
+<details><summary>Cómo limpiar tu PC sin dañarlo</summary><p>Apaga y desenchufa el equipo. Sopla el polvo con aire comprimido en ráfagas cortas sujetando los ventiladores para que no giren. No uses aspiradora ni líquidos. Si las temperaturas siguen altas, cambia la pasta térmica.</p></details>
+<details><summary>Qué hacer si tu móvil se moja</summary><p>Apágalo de inmediato, no lo cargues y no uses secador. Sécalo por fuera y llévalo cuanto antes al técnico: la corrosión avanza con los días.</p></details>
+<details><summary>Cuándo conviene reparar y cuándo cambiar de equipo</summary><p>Si la reparación cuesta menos de la mitad de uno nuevo equivalente y el resto del equipo rinde bien, suele compensar reparar.</p></details>
+</div></section>
+
+<section class="s" id="faq"><div class="w">
+<div class="sh"><div><span class="tag">Preguntas frecuentes</span><h2>Resolvemos tus <span class="gold">dudas</span></h2></div></div>
+<details><summary>¿Cuánto tarda una reparación?</summary><p>Depende del equipo y de la pieza. Te damos un plazo estimado en el diagnóstico y puedes seguirlo online.</p></details>
+<details><summary>¿Tiene coste el diagnóstico?</summary><p>Es gratuito si aceptas la reparación; si no, se cobra una tarifa fija de [X €] (política de ejemplo).</p></details>
+<details><summary>¿Reparáis equipos comprados en otro sitio?</summary><p>Sí, trabajamos con PCs, portátiles, móviles y consolas de cualquier procedencia.</p></details>
+<details><summary>¿Montáis PCs a medida?</summary><p>Sí. Cuéntanos tu uso y presupuesto desde el formulario y te proponemos una configuración.</p></details>
+<details><summary>¿Cómo sé el precio y la disponibilidad de un producto?</summary><p>Cada producto muestra su precio con IVA. Tras tu pedido te confirmamos disponibilidad por correo o teléfono.</p></details>
+</div></section>
+
+<section class="s" id="contacto"><div class="w">
+<div class="sh"><div><span class="tag">Sección 03 · Contacto</span><h2>Visítanos o <span class="gold">escríbenos</span></h2></div></div>
+<div class="ct">
+<div class="box"><h3>Datos de la tienda</h3>
+<ul class="info">
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><div><small>Teléfono</small><a href="tel:+34958000123">+34 958 000 123</a></div></li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><small>Dirección</small>Calle Recogidas 25, 18002 Granada (Andalucía)<br><a href="https://www.google.com/maps/search/?api=1&query=Calle+Recogidas+25+Granada" target="_blank" rel="noopener" style="color:var(--gold);font-size:13px">Cómo llegar ↗</a></div></li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><small>Horario</small>Lun–Vie 10:00–20:00 · Sáb 10:00–14:00</div></li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><small>Correo</small><a href="mailto:info@aurum.example">info@aurum.example</a></div></li></ul>
+<div class="map" role="img" aria-label="Ubicación de la tienda (Granada)"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div></div>
+<div class="box"><h3>Solicitar reparación o presupuesto</h3>
+<form id="cf"><label for="n">Nombre</label><input id="n" required><label for="t">Teléfono</label><input id="t" type="tel" required><label for="d">Dispositivo</label><select id="d"><option>PC</option><option>Portátil</option><option>Móvil</option><option>Consola</option><option>Otro</option></select><label for="p">Describe el problema</label><textarea id="p" rows="4" required></textarea>
+<div class="cta"><button class="btn fill" type="submit">Enviar por correo</button><a class="btn" id="wa" href="#">WhatsApp</a></div><div class="msg" id="cm" role="status"></div></form></div>
+</div></div></section>
+</main>
+
+<footer><div class="w"><div class="ct" style="margin-bottom:24px"><div><h3 style="font-size:14px">Boletín de ofertas</h3><form id="nl" class="row"><div><label for="ne" class="sr">Correo</label><input id="ne" type="email" placeholder="tu@correo.com" required></div><button class="btn" type="submit">Suscribirme</button></form><div class="msg" id="nm" role="status"></div></div><div class="lks"><button class="lk" data-lg="g">Garantía</button><button class="lk" data-lg="e">Envíos y devoluciones</button><button class="lk" data-lg="p">Privacidad</button><button class="lk" data-lg="c">Cookies</button><button class="lk" data-lg="a">Aviso legal</button></div></div><div class="fw"><span>AURUM © 2026 · Granada · CIF B-00000000 (ejemplo)</span><span>Garantía en cada reparación · Envío asegurado</span></div></div></footer>
+
+<aside id="drawer" aria-label="Carrito"><div class="row" style="justify-content:space-between;align-items:center"><h3>Tu carrito</h3><button class="x" id="cx" aria-label="Cerrar">✕</button></div><ul id="cl"></ul><p id="ce" style="color:var(--mut)">Tu carrito está vacío.</p><div class="tl t" id="sub"></div><p style="font-size:12px;color:var(--mut);margin:0">Envío y total final se calculan en el pago.</p><button class="btn fill" id="ck" type="button">Finalizar compra</button></aside>
+<div id="co" role="dialog" aria-modal="true" aria-label="Finalizar compra"><div class="cob" id="cob"></div></div>
+
+<div id="md" role="dialog" aria-modal="true" aria-label="Detalle"></div>
+<div id="cmpbar"></div>
+<div id="cookie" role="region" aria-label="Aviso de almacenamiento"><span>Esta web guarda tu carrito y favoritos en tu navegador. <button class="lk" data-lg="c">Más info</button></span><button class="btn fill" id="cka" type="button">Entendido</button></div>
+<a class="callfab" href="tel:+34958000123" aria-label="Llamar a la tienda">Llamar</a>
+<script src="script.js"></script>
+</body>
+</html>
