@@ -1,137 +1,351 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="dark">
-<meta name="description" content="AURUM: tienda y laboratorio de reparación de hardware en Granada. Componentes, PCs a medida, portátiles, móviles y consolas.">
-<meta property="og:title" content="AURUM · Hardware premium en Granada"><meta property="og:type" content="website">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ComputerStore","name":"AURUM","telephone":"+34958000123","address":{"@type":"PostalAddress","streetAddress":"Calle Recogidas 25","postalCode":"18002","addressLocality":"Granada","addressCountry":"ES"},"openingHours":["Mo-Fr 10:00-20:00","Sa 10:00-14:00"]}</script>
-<title>AURUM — Tienda y laboratorio de hardware</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reformas e Inmobiliaria Estévez | PropTech</title>
+<meta name="description" content="Compra, alquila o reforma tu vivienda de principio a fin: tours 360°, codiseño 3D y firma electrónica.">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>tailwind.config={theme:{extend:{colors:{tech:'#00b4d8'},fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}</script>
+<style>
+.stage{perspective:1400px}
+.plan{--rx:58deg;--rz:-30deg;position:relative;width:72%;margin:3rem auto;aspect-ratio:100/64;transform-style:preserve-3d;transform:rotateX(var(--rx)) rotateZ(var(--rz))}
+.rm,.fn{position:absolute;transform-style:preserve-3d}
+.wl,.fl{position:absolute;inset:0}
+.wl{box-sizing:border-box;border:2px solid #64748b}
+.lb{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;transform-style:preserve-3d;transform:translateZ(36px) rotateZ(calc(var(--rz)*-1)) rotateX(calc(var(--rx)*-1))}
+.lb span{background:rgba(15,23,42,.8);color:#fff;font-size:10px;font-weight:600;padding:1px 6px;border-radius:9999px;white-space:nowrap}
+@media(max-width:640px){.plan{width:90%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.field{width:100%;border:1px solid #cbd5e1;border-radius:.75rem;padding:.7rem .9rem;background:#fff;transition:.3s}
+.field:focus{outline:2px solid #00b4d8;border-color:#00b4d8}
+.field.bad{border-color:#dc2626;background:#fef2f2}
+</style>
 </head>
-<body>
-<header><div class="w hd">
-<a class="logo" href="#inicio"><svg width="30" height="30" viewBox="0 0 34 34" fill="none" stroke="#f0c75e" stroke-width="1.6" aria-hidden="true"><path d="M17 2 31 10v14L17 32 3 24V10z"/><path d="M17 9 25 14v6l-8 5-8-5v-6z"/><circle cx="17" cy="17" r="2.2" fill="#f0c75e"/></svg>AURUM</a>
-<nav aria-label="Principal"><a href="#tienda">Tienda</a><a href="#configurador">Configurador</a><a href="#reparacion">Reparación</a><a href="#citas">Citas</a><a href="#nosotros">Nosotros</a><a href="#guias">Guías</a><a href="#contacto">Contacto</a></nav>
-<button class="btn cartbtn" id="cb" aria-label="Abrir carrito">Carrito<b id="cc">0</b></button>
-</div></header>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+<!-- NAVBAR -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+ <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between" aria-label="Principal">
+  <a href="#inicio" class="flex items-center gap-2 font-extrabold text-slate-900 tracking-tight">ESTÉVEZ <span class="text-slate-400">|</span> <span class="text-xs font-bold bg-tech/15 text-cyan-800 px-2 py-1 rounded-full">PropTech</span></a>
+  <div id="menu" class="hidden md:flex absolute md:static top-16 inset-x-0 flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 bg-white md:bg-transparent p-4 md:p-0 border-b md:border-0 border-slate-200 text-sm font-medium text-slate-600">
+   <a class="hover:text-orange-600 transition duration-300" href="#experiencia">Experiencia</a>
+   <a class="hover:text-orange-600 transition duration-300" href="#buscador">Buscador</a>
+   <a class="hover:text-orange-600 transition duration-300" href="#configurador">Configurador</a>
+   <a class="hover:text-orange-600 transition duration-300" href="#testimonios">Testimonios</a>
+   <a class="hover:text-orange-600 transition duration-300" href="#faq">FAQ</a>
+   <a class="hover:text-orange-600 transition duration-300" href="#contacto">Contacto</a>
+   <a href="#configurador" class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-full font-semibold transition duration-300 hover:scale-105">Iniciar Proyecto</a>
+  </div>
+  <button id="burger" class="md:hidden p-2 rounded-lg hover:bg-slate-100" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+   <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+ </nav>
+</header>
 
 <main id="inicio">
-<div class="hero2"><div class="w">
-<span class="tag">Granada · Tienda + laboratorio</span>
-<h1>Tu hardware, <span class="gold">en su mejor versión.</span></h1>
-<p>Compra componentes, PCs, portátiles, móviles y consolas. Y si algo falla, lo reparamos en nuestro taller.</p>
-<div class="cta" style="justify-content:center"><a class="btn fill" href="#tienda">Ver tienda</a><a class="btn" href="#reparacion">Reparar mi equipo</a></div>
-<div class="orb" aria-hidden="true"><i class="r1"></i><i class="r2"></i><i class="r3"></i><svg viewBox="0 0 220 90" fill="none" stroke="#f0c75e" stroke-width="2"><rect x="4" y="14" width="212" height="62" rx="8"/><circle cx="62" cy="45" r="24"/><circle cx="62" cy="45" r="5"/><path d="M62 21v48M38 45h48M45 28l34 34M79 28 45 62" stroke-width="1"/><circle cx="148" cy="45" r="24"/><circle cx="148" cy="45" r="5"/><path d="M148 21v48M124 45h48M131 28l34 34M165 28l-34 34" stroke-width="1"/></svg></div>
-<div class="chips"><span>Envío gratis desde 150 €</span><span>Recogida en tienda</span><span>Garantía por escrito</span><span>Seguimiento online</span></div>
-</div></div>
+<!-- HERO -->
+<section class="max-w-6xl mx-auto px-4 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+ <div>
+  <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">El futuro de tu hogar, diseñado y gestionado hoy.</h1>
+  <p class="mt-5 text-lg text-slate-500 max-w-prose">Recorre tu próxima vivienda con tours virtuales 360°, diseña tu reforma en 3D junto a nuestro equipo y firma todo sin desplazamientos.</p>
+  <div class="mt-8 flex flex-wrap gap-3">
+   <a href="#configurador" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg shadow-orange-600/30 transition duration-300 hover:scale-105">Iniciar Proyecto</a>
+   <a href="#buscador" class="border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-semibold px-6 py-3 rounded-full transition duration-300 hover:scale-105">Buscar vivienda</a>
+  </div>
+ </div>
+ <div class="bg-slate-900 rounded-3xl p-4 shadow-2xl">
+  <div class="flex items-center justify-between text-xs text-slate-400 mb-3 px-1">
+   <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tech animate-pulse"></span>Gemelo Digital 3D · Cocina</span>
+   <span id="twinLabel" class="text-tech font-semibold">Acabado Nórdico</span>
+  </div>
+  <div id="twinWall" class="relative h-56 rounded-2xl overflow-hidden transition-colors duration-500" role="img" aria-label="Simulación de una cocina">
+   <div id="twinCab" class="absolute top-6 left-4 right-4 h-14 rounded-lg transition-colors duration-500 shadow"></div>
+   <div id="twinIsland" class="absolute bottom-12 left-1/4 w-1/2 h-14 rounded-lg transition-colors duration-500 shadow-lg"></div>
+   <div id="twinFloor" class="absolute bottom-0 inset-x-0 h-10 transition-colors duration-500"></div>
+   <span class="absolute top-2 right-3 text-[10px] font-bold bg-slate-900/70 text-white px-2 py-1 rounded-full">360°</span>
+  </div>
+  <button id="twinBtn" class="mt-4 w-full bg-tech hover:bg-cyan-500 text-slate-900 font-bold py-3 rounded-xl transition duration-300 hover:scale-[1.02]">Cambiar a Acabado Industrial</button>
+ </div>
+</section>
 
-<section class="s" id="tienda"><div class="w">
-<div class="sh"><div><span class="tag">Sección 01 · Tienda</span><h2>Componentes <span class="gold">para vender</span></h2></div><p>Precios de ejemplo con IVA incluido. Envío gratis en pedidos desde 150 €.</p></div>
-<div class="tabs" id="tabs" role="group" aria-label="Filtrar por categoría"></div>
-<div class="grid" id="grid"></div>
-</div></section>
+<!-- BUSCADOR -->
+<section id="buscador" class="bg-white border-y border-slate-200 py-16">
+ <div class="max-w-6xl mx-auto px-4">
+  <h2 class="text-3xl font-extrabold text-slate-900">Encuentra tu siguiente paso</h2>
+  <p class="mt-2 text-slate-500">Filtra y consulta nuestro catálogo en la nube, o <a href="#pisos3d" class="text-orange-600 font-semibold hover:underline">explora pisos de ejemplo en 3D</a>.</p>
+  <form id="searchForm" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
+   <label class="text-sm font-medium">Operación
+    <select id="sOp" class="field mt-1"><option>Comprar</option><option>Alquilar</option><option>Reformar</option></select></label>
+   <label class="text-sm font-medium">Tipo de inmueble
+    <select id="sType" class="field mt-1"><option>Piso</option><option>Casa</option><option>Ático</option><option>Local</option></select></label>
+   <label class="text-sm font-medium">Ubicación
+    <select id="sLoc" class="field mt-1"><option>Granada</option><option>Málaga</option><option>Sevilla</option><option>Madrid</option><option>Barcelona</option></select></label>
+   <button id="sBtn" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 rounded-xl transition duration-300 hover:scale-105">Buscar Ahora</button>
+  </form>
+  <div id="sOut" class="mt-8 min-h-[3rem]" aria-live="polite"></div>
+ </div>
+</section>
 
-<section class="s" id="configurador"><div class="w">
-<div class="sh"><div><span class="tag">Configurador</span><h2>Monta tu <span class="gold">PC a medida</span></h2></div><p>Elige las piezas y comprobamos la compatibilidad y la potencia de la fuente.</p></div>
-<div class="box" id="cfg"></div></div></section>
+<!-- PISOS 3D -->
+<section id="pisos3d" class="max-w-6xl mx-auto px-4 py-16">
+ <h2 class="text-3xl font-extrabold text-slate-900">Explora pisos en 3D</h2>
+ <p class="mt-2 text-slate-500 max-w-prose">Gira, inclina y amuebla cada vivienda antes de visitarla. Modelos de ejemplo.</p>
+ <div class="mt-8 grid lg:grid-cols-3 gap-6">
+  <div class="lg:col-span-2 bg-slate-900 rounded-3xl p-4">
+   <div id="aptTabs" class="flex flex-wrap gap-2"></div>
+   <div class="stage overflow-hidden"><div id="plan" class="plan" role="img" aria-label="Plano 3D de la vivienda seleccionada"></div></div>
+   <div class="grid sm:grid-cols-3 gap-4 text-xs text-slate-300 items-center px-1 pb-1">
+    <label class="block">Girar<input id="rz" type="range" min="-70" max="70" value="-30" class="w-full accent-orange-600"></label>
+    <label class="block">Inclinar<input id="rx" type="range" min="25" max="80" value="58" class="w-full accent-orange-600"></label>
+    <label class="flex items-center gap-2 text-sm"><input id="furn" type="checkbox" checked class="accent-orange-600 w-4 h-4">Mostrar muebles</label>
+   </div>
+  </div>
+  <aside id="aptInfo" class="bg-white border border-slate-200 rounded-2xl p-6 self-start" aria-live="polite"></aside>
+ </div>
+</section>
 
-<div class="w brands" aria-label="Marcas que vendemos y reparamos"><span>NVIDIA</span><span>AMD</span><span>INTEL</span><span>ASUS</span><span>MSI</span><span>SAMSUNG</span><span>APPLE</span><span>SONY</span><span>NINTENDO</span><span>VALVE</span></div>
+<!-- PILARES -->
+<section id="experiencia" class="max-w-6xl mx-auto px-4 py-16">
+ <h2 class="text-3xl font-extrabold text-slate-900">Un proceso, de principio a fin</h2>
+ <p class="mt-2 text-slate-500 max-w-prose">Tres tecnologías que eliminan visitas, esperas y papeleo.</p>
+ <div class="mt-10 grid md:grid-cols-3 gap-6">
+  <article class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-tech hover:-translate-y-2 hover:shadow-xl transition duration-300">
+   <div class="w-12 h-12 rounded-xl bg-tech/15 text-cyan-700 grid place-items-center group-hover:bg-tech group-hover:text-white transition duration-300"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg></div>
+   <h3 class="mt-4 font-bold text-slate-900">Visitas Virtuales 360°</h3>
+   <p class="mt-2 text-sm text-slate-500">Recorre cada estancia desde el móvil. Mide, compara y vuelve las veces que quieras. Cero desplazamientos.</p>
+  </article>
+  <article class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-tech hover:-translate-y-2 hover:shadow-xl transition duration-300">
+   <div class="w-12 h-12 rounded-xl bg-tech/15 text-cyan-700 grid place-items-center group-hover:bg-tech group-hover:text-white transition duration-300"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h3m3 0h2M8 16h3m3 0h2"/></svg></div>
+   <h3 class="mt-4 font-bold text-slate-900">Presupuestos en tiempo real</h3>
+   <p class="mt-2 text-sm text-slate-500">Cambias un material y el precio se actualiza al instante. Convergencia IT/OT entre obra y software.</p>
+  </article>
+  <article class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-tech hover:-translate-y-2 hover:shadow-xl transition duration-300">
+   <div class="w-12 h-12 rounded-xl bg-tech/15 text-cyan-700 grid place-items-center group-hover:bg-tech group-hover:text-white transition duration-300"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+   <h3 class="mt-4 font-bold text-slate-900">Cierre remoto con firma electrónica</h3>
+   <p class="mt-2 text-sm text-slate-500">Firma contratos desde casa con validez legal conforme al Reglamento eIDAS.</p>
+  </article>
+ </div>
+</section>
 
-<section class="s" id="reparacion"><div class="w">
-<div class="sh"><div><span class="tag">Sección 02 · Laboratorio</span><h2>Servicio de <span class="gold">reparaciones</span></h2></div><p>Diagnóstico profesional y seguimiento transparente de principio a fin.</p></div>
-<div class="svc">
-<div><h3>Reparación de PC</h3><p>Diagnóstico, limpieza, pasta térmica y sustitución de piezas.</p></div>
-<div><h3>Portátiles</h3><p>Pantallas, baterías, teclados, bisagras y placas.</p></div>
-<div><h3>Móviles</h3><p>Pantalla, batería, puertos de carga y daños por agua.</p></div>
-<div><h3>Consolas</h3><p>HDMI, sobrecalentamiento, ventilación y lectores.</p></div></div>
-<div class="trk" id="seguimiento"><div><span class="tag">Seguidor de estado</span><h3 class="gold">Consulta tu reparación</h3><p>Introduce el código de tu orden. Prueba con <b>AU-1234</b> para ver un ejemplo.</p>
-<form id="tf" class="row"><div><label for="code">Código de orden</label><input id="code" placeholder="AU-0000" autocomplete="off" required></div><button class="btn fill" type="submit">Consultar</button></form><div class="msg" id="tm" role="status"></div></div>
-<div class="job" id="job" aria-live="polite"></div></div>
-</div></section>
+<!-- CONFIGURADOR -->
+<section id="configurador" class="bg-slate-900 py-16">
+ <div class="max-w-2xl mx-auto px-4">
+  <h2 class="text-3xl font-extrabold text-white text-center">Configura tu proyecto</h2>
+  <p class="mt-2 text-slate-400 text-center">Tres pasos y un asesor te propone un plan.</p>
+  <div class="mt-8 bg-white rounded-3xl p-6 md:p-8 shadow-2xl">
+   <div class="flex justify-between text-sm font-semibold text-slate-600 mb-2"><span id="wLabel">Paso 1 de 3</span><span id="wPct">33%</span></div>
+   <div class="h-2.5 bg-slate-200 rounded-full overflow-hidden" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="33" id="wBarWrap"><div id="wBar" class="h-full w-1/3 bg-tech rounded-full transition-all duration-500"></div></div>
+   <form id="wiz" novalidate class="mt-6">
+    <div data-step="1">
+     <h3 class="font-bold text-slate-900 mb-3">¿Cuál es tu objetivo?</h3>
+     <div class="grid sm:grid-cols-3 gap-3">
+      <label class="cursor-pointer"><input type="radio" name="goal" value="Comprar" class="peer sr-only"><span class="block text-center border-2 border-slate-200 rounded-2xl p-4 font-semibold transition duration-300 hover:border-tech peer-checked:border-orange-600 peer-checked:bg-orange-50 peer-focus-visible:ring-2 peer-focus-visible:ring-tech">Comprar</span></label>
+      <label class="cursor-pointer"><input type="radio" name="goal" value="Reformar" class="peer sr-only"><span class="block text-center border-2 border-slate-200 rounded-2xl p-4 font-semibold transition duration-300 hover:border-tech peer-checked:border-orange-600 peer-checked:bg-orange-50 peer-focus-visible:ring-2 peer-focus-visible:ring-tech">Reformar</span></label>
+      <label class="cursor-pointer"><input type="radio" name="goal" value="Ambos" class="peer sr-only"><span class="block text-center border-2 border-slate-200 rounded-2xl p-4 font-semibold transition duration-300 hover:border-tech peer-checked:border-orange-600 peer-checked:bg-orange-50 peer-focus-visible:ring-2 peer-focus-visible:ring-tech">Ambos</span></label>
+     </div>
+     <p class="err text-sm text-red-600 mt-2 hidden" data-for="goal">Elige una opción para continuar.</p>
+    </div>
+    <div data-step="2" class="hidden space-y-4">
+     <h3 class="font-bold text-slate-900">¿Cómo te contactamos?</h3>
+     <div><label class="text-sm font-medium" for="wName">Nombre completo</label><input id="wName" name="name" autocomplete="name" class="field mt-1"><p class="err text-sm text-red-600 mt-1 hidden" data-for="name">Escribe tu nombre (mínimo 2 caracteres).</p></div>
+     <div><label class="text-sm font-medium" for="wMail">Email</label><input id="wMail" name="email" type="email" autocomplete="email" class="field mt-1"><p class="err text-sm text-red-600 mt-1 hidden" data-for="email">Introduce un email válido, por ejemplo nombre@dominio.es.</p></div>
+     <div><label class="text-sm font-medium" for="wTel">Teléfono</label><input id="wTel" name="phone" type="tel" autocomplete="tel" class="field mt-1"><p class="err text-sm text-red-600 mt-1 hidden" data-for="phone">Introduce un teléfono de 9 cifras (admite +34).</p></div>
+    </div>
+    <div data-step="3" class="hidden space-y-4">
+     <h3 class="font-bold text-slate-900">Inversión y plazos</h3>
+     <div><label class="text-sm font-medium" for="wBud">Presupuesto</label><select id="wBud" name="budget" class="field mt-1"><option value="">Selecciona un rango</option><option>Menos de 30.000 €</option><option>30.000 – 100.000 €</option><option>100.000 – 250.000 €</option><option>Más de 250.000 €</option></select><p class="err text-sm text-red-600 mt-1 hidden" data-for="budget">Selecciona un rango de presupuesto.</p></div>
+     <div><label class="text-sm font-medium" for="wTime">Plazo de inicio</label><select id="wTime" name="time" class="field mt-1"><option value="">Selecciona un plazo</option><option>Inmediato</option><option>En 1–3 meses</option><option>En 3–6 meses</option><option>Solo me informo</option></select><p class="err text-sm text-red-600 mt-1 hidden" data-for="time">Selecciona cuándo quieres empezar.</p></div>
+     <label class="flex gap-2 text-sm text-slate-600"><input type="checkbox" name="rgpd" class="mt-1 accent-orange-600"><span>Acepto la política de privacidad (RGPD).</span></label>
+     <p class="err text-sm text-red-600 hidden" data-for="rgpd">Debes aceptar la política de privacidad.</p>
+    </div>
+    <div class="mt-8 flex justify-between gap-3">
+     <button type="button" id="wPrev" class="invisible px-5 py-3 rounded-xl border border-slate-300 font-semibold hover:bg-slate-100 transition duration-300">Atrás</button>
+     <button type="button" id="wNext" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-xl font-semibold transition duration-300 hover:scale-105">Siguiente</button>
+     <button type="submit" id="wSend" class="hidden bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-xl font-semibold transition duration-300 hover:scale-105">Enviar proyecto</button>
+    </div>
+   </form>
+   <div id="wOk" class="hidden text-center py-8" role="status">
+    <div class="w-16 h-16 mx-auto rounded-full bg-emerald-100 text-emerald-600 grid place-items-center"><svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+    <h3 class="mt-4 text-2xl font-extrabold text-slate-900">¡Proyecto recibido!</h3>
+    <p id="wOkTxt" class="mt-2 text-slate-500"></p>
+    <p class="mt-1 text-sm text-slate-500">Tus datos se han guardado de forma segura en tu entorno Cloud cifrado.</p>
+    <button id="wReset" class="mt-6 text-orange-600 font-semibold hover:underline">Configurar otro proyecto</button>
+   </div>
+  </div>
+ </div>
+</section>
 
-<section class="s" id="presupuesto"><div class="w">
-<div class="sh"><div><span class="tag">Presupuesto online</span><h2>¿Cuánto cuesta <span class="gold">repararlo?</span></h2></div><p>Estimación orientativa (valores de ejemplo). El precio final se confirma tras el diagnóstico.</p></div>
-<div class="box"><div class="fg"><div><label for="rd">Dispositivo</label><select id="rd"></select></div><div><label for="rf">Avería</label><select id="rf"></select></div></div><div id="rr" class="rrs" aria-live="polite"></div><button class="btn fill" type="button" id="rbk">Reservar cita para esta avería</button></div>
-</div></section>
+<!-- TESTIMONIOS -->
+<section id="testimonios" class="max-w-6xl mx-auto px-4 py-16">
+ <h2 class="text-3xl font-extrabold text-slate-900">Clientes que ya firmaron desde el sofá</h2>
+ <div class="mt-8 grid md:grid-cols-3 gap-6">
+  <blockquote class="bg-white border border-slate-200 rounded-2xl p-6"><p class="text-slate-700">Vi el piso en 360° desde Londres y firmé en dos días. Sin viajes ni notarías a ciegas.</p><footer class="mt-4 text-sm font-semibold text-slate-900">Marta R. <span class="font-normal text-slate-500">· Compra en Granada</span></footer></blockquote>
+  <blockquote class="bg-white border border-slate-200 rounded-2xl p-6"><p class="text-slate-700">Cambié encimera y suelo en el gemelo 3D y el presupuesto se ajustó al momento.</p><footer class="mt-4 text-sm font-semibold text-slate-900">Javier L. <span class="font-normal text-slate-500">· Reforma de cocina</span></footer></blockquote>
+  <blockquote class="bg-white border border-slate-200 rounded-2xl p-6"><p class="text-slate-700">Compré y reformé con un único contacto. Cada fase quedó documentada en la plataforma.</p><footer class="mt-4 text-sm font-semibold text-slate-900">Elena P. <span class="font-normal text-slate-500">· Compra + reforma</span></footer></blockquote>
+ </div>
+</section>
 
-<section class="s" id="citas"><div class="w">
-<div class="sh"><div><span class="tag">Citas y tasación</span><h2>Reserva tu <span class="gold">cita</span> o vende tu equipo</h2></div><p>Te confirmamos la cita por teléfono o correo.</p></div>
-<div class="ct">
-<div class="box"><h3>Reservar cita en el taller</h3><form id="bk"><label for="bn">Nombre</label><input id="bn" required><label for="bt">Teléfono</label><input id="bt" type="tel" required><div class="fg"><div><label for="bd">Fecha</label><input id="bd" type="date" required></div><div><label for="bh">Hora</label><select id="bh"></select></div></div><label for="bp">Equipo y avería</label><textarea id="bp" rows="3" required></textarea><div class="cta"><button class="btn fill" type="submit">Solicitar cita</button></div><div class="msg" id="bm" role="status"></div></form></div>
-<div class="box"><h3>Tasación de equipos usados</h3><form id="ts"><div class="fg"><div><label for="tt">Tipo</label><select id="tt"><option>Móvil</option><option>Portátil</option><option>PC</option><option>Consola</option><option>Tarjeta gráfica</option></select></div><div><label for="te">Estado</label><select id="te"><option>Como nuevo</option><option>Buen estado</option><option>Con daños</option><option>No funciona</option></select></div></div><label for="tm2">Marca y modelo</label><input id="tm2" required><label for="td">Descripción</label><textarea id="td" rows="3"></textarea><label for="tc">Tu correo</label><input id="tc" type="email" required><div class="cta"><button class="btn fill" type="submit">Pedir tasación</button></div><div class="msg" id="tsm" role="status"></div></form></div>
-</div></div></section>
+<!-- FAQ -->
+<section id="faq" class="bg-white border-y border-slate-200 py-16">
+ <div class="max-w-3xl mx-auto px-4">
+  <h2 class="text-3xl font-extrabold text-slate-900">Preguntas frecuentes</h2>
+  <div class="mt-8 divide-y divide-slate-200 border border-slate-200 rounded-2xl">
+   <div><button class="faq w-full flex justify-between items-center gap-4 text-left p-5 font-semibold text-slate-900 hover:bg-slate-50 transition duration-300" aria-expanded="false" aria-controls="a1">¿Es legal firmar un contrato de forma remota?<svg class="w-5 h-5 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button><div id="a1" class="hidden px-5 pb-5 text-slate-500">Sí. Usamos firma electrónica cualificada conforme al Reglamento eIDAS, con la misma validez jurídica que la firma manuscrita. Cada documento queda sellado con fecha y hora.</div></div>
+   <div><button class="faq w-full flex justify-between items-center gap-4 text-left p-5 font-semibold text-slate-900 hover:bg-slate-50 transition duration-300" aria-expanded="false" aria-controls="a2">¿Cómo funciona el gemelo digital?<svg class="w-5 h-5 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button><div id="a2" class="hidden px-5 pb-5 text-slate-500">Escaneamos la vivienda en 360° y la convertimos en un modelo 3D. Puedes probar acabados y distribuciones, y el presupuesto se recalcula con cada cambio.</div></div>
+   <div><button class="faq w-full flex justify-between items-center gap-4 text-left p-5 font-semibold text-slate-900 hover:bg-slate-50 transition duration-300" aria-expanded="false" aria-controls="a3">¿Tengo que ir a la oficina física?<svg class="w-5 h-5 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button><div id="a3" class="hidden px-5 pb-5 text-slate-500">No es necesario. Todo el proceso se hace online. Si prefieres atención presencial, puedes reservar cita en nuestra oficina.</div></div>
+  </div>
+ </div>
+</section>
 
-<section class="s" id="proceso"><div class="w">
-<div class="sh"><div><span class="tag">Cómo trabajamos</span><h2>Proceso en <span class="gold">cuatro pasos</span></h2></div></div>
-<div class="steps"><div><h3>Recepción</h3><p>Registramos tu equipo y te damos un código de seguimiento.</p></div><div><h3>Diagnóstico</h3><p>Te enviamos presupuesto cerrado antes de tocar nada.</p></div><div><h3>Reparación</h3><p>Piezas de calidad y pruebas de estrés finales.</p></div><div><h3>Entrega</h3><p>Recoges tu equipo con garantía por escrito.</p></div></div>
-</div></section>
-
-<section class="s" id="garantia"><div class="w">
-<div class="sh"><div><span class="tag">Por qué elegirnos</span><h2>Compra y repara con <span class="gold">confianza</span></h2></div></div>
-<div class="why">
-<div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.500-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><h3>Garantía por escrito</h3><p>Cada producto y reparación incluye garantía. Con la garantía legal vigente.</p></div>
-<div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><h3>Presupuesto cerrado</h3><p>Sabes el coste antes de que toquemos tu equipo.</p></div>
-<div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3>Seguimiento online</h3><p>Consulta cada fase con tu código de orden.</p></div>
-<div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v10H4zM8 8V5h8v3"/></svg><h3>Compra + reparación</h3><p>Todo en un mismo sitio: asesoramiento, venta y taller.</p></div>
-</div></div></section>
-
-<section class="s" id="nosotros"><div class="w">
-<div class="sh"><div><span class="tag">Sobre nosotros</span><h2>Un taller de <span class="gold">Granada</span></h2></div></div>
-<div class="ct"><div class="box"><p style="margin-top:0;color:var(--mut)">Somos un equipo de técnicos apasionados por el hardware. Vendemos componentes y equipos que nos gustaría usar, y reparamos lo que ya tienes con piezas de calidad y presupuesto cerrado. [Cuenta aquí tu historia, equipo y fotos del local.]</p><p style="color:var(--mut)">Calle Recogidas 25, Granada · Lun–Vie 10:00–20:00 · Sáb 10:00–14:00</p></div>
-<div class="box"><h3>Antes y después <small style="color:var(--mut);font:11px Manrope">(casos de ejemplo)</small></h3><ul class="info" style="margin-top:12px"><li><div><small>Portátil</small>Pantalla rota → pantalla nueva y prueba de 24 h.</div></li><li><div><small>Consola</small>Sobrecalentamiento → limpieza y pasta térmica nueva.</div></li><li><div><small>Móvil</small>Batería hinchada → batería nueva y sellado.</div></li></ul></div></div>
-</div></section>
-
-<section class="s" id="opiniones"><div class="w">
-<div class="sh"><div><span class="tag">Opiniones</span><h2>Lo que dicen <span class="gold">nuestros clientes</span></h2></div><p>Las tarjetas "ejemplo" son de muestra: sustitúyelas por opiniones reales.</p></div>
-<div class="grid" id="rv"></div>
-<div class="box" style="margin-top:20px"><h3>Deja tu opinión</h3><form id="rf2"><div class="fg"><div><label for="on">Nombre</label><input id="on" required></div><div><label for="os">Valoración</label><select id="os"><option value="5">★★★★★</option><option value="4">★★★★☆</option><option value="3">★★★☆☆</option><option value="2">★★☆☆☆</option><option value="1">★☆☆☆☆</option></select></div></div><label for="ot">Comentario</label><textarea id="ot" rows="3" required></textarea><div class="cta"><button class="btn fill" type="submit">Publicar</button></div></form></div>
-</div></section>
-
-<section class="s" id="guias"><div class="w">
-<div class="sh"><div><span class="tag">Guías</span><h2>Aprende con <span class="gold">AURUM</span></h2></div></div>
-<details><summary>Qué gráfica comprar según tu monitor</summary><p>1080p: RTX 5060 o RX 9060 XT. 1440p: RTX 5070, RTX 5070 Ti o RX 9070 XT. 4K: RTX 5080 o RTX 5090. Comprueba también que tu fuente tenga potencia suficiente: usa nuestro configurador.</p></details>
-<details><summary>Cómo limpiar tu PC sin dañarlo</summary><p>Apaga y desenchufa el equipo. Sopla el polvo con aire comprimido en ráfagas cortas sujetando los ventiladores para que no giren. No uses aspiradora ni líquidos. Si las temperaturas siguen altas, cambia la pasta térmica.</p></details>
-<details><summary>Qué hacer si tu móvil se moja</summary><p>Apágalo de inmediato, no lo cargues y no uses secador. Sécalo por fuera y llévalo cuanto antes al técnico: la corrosión avanza con los días.</p></details>
-<details><summary>Cuándo conviene reparar y cuándo cambiar de equipo</summary><p>Si la reparación cuesta menos de la mitad de uno nuevo equivalente y el resto del equipo rinde bien, suele compensar reparar.</p></details>
-</div></section>
-
-<section class="s" id="faq"><div class="w">
-<div class="sh"><div><span class="tag">Preguntas frecuentes</span><h2>Resolvemos tus <span class="gold">dudas</span></h2></div></div>
-<details><summary>¿Cuánto tarda una reparación?</summary><p>Depende del equipo y de la pieza. Te damos un plazo estimado en el diagnóstico y puedes seguirlo online.</p></details>
-<details><summary>¿Tiene coste el diagnóstico?</summary><p>Es gratuito si aceptas la reparación; si no, se cobra una tarifa fija de [X €] (política de ejemplo).</p></details>
-<details><summary>¿Reparáis equipos comprados en otro sitio?</summary><p>Sí, trabajamos con PCs, portátiles, móviles y consolas de cualquier procedencia.</p></details>
-<details><summary>¿Montáis PCs a medida?</summary><p>Sí. Cuéntanos tu uso y presupuesto desde el formulario y te proponemos una configuración.</p></details>
-<details><summary>¿Cómo sé el precio y la disponibilidad de un producto?</summary><p>Cada producto muestra su precio con IVA. Tras tu pedido te confirmamos disponibilidad por correo o teléfono.</p></details>
-</div></section>
-
-<section class="s" id="contacto"><div class="w">
-<div class="sh"><div><span class="tag">Sección 03 · Contacto</span><h2>Visítanos o <span class="gold">escríbenos</span></h2></div></div>
-<div class="ct">
-<div class="box"><h3>Datos de la tienda</h3>
-<ul class="info">
-<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><div><small>Teléfono</small><a href="tel:+34958000123">+34 958 000 123</a></div></li>
-<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><small>Dirección</small>Calle Recogidas 25, 18002 Granada (Andalucía)<br><a href="https://www.google.com/maps/search/?api=1&query=Calle+Recogidas+25+Granada" target="_blank" rel="noopener" style="color:var(--gold);font-size:13px">Cómo llegar ↗</a></div></li>
-<li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><small>Horario</small>Lun–Vie 10:00–20:00 · Sáb 10:00–14:00</div></li>
-<li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><small>Correo</small><a href="mailto:info@aurum.example">info@aurum.example</a></div></li></ul>
-<div class="map" role="img" aria-label="Ubicación de la tienda (Granada)"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div></div>
-<div class="box"><h3>Solicitar reparación o presupuesto</h3>
-<form id="cf"><label for="n">Nombre</label><input id="n" required><label for="t">Teléfono</label><input id="t" type="tel" required><label for="d">Dispositivo</label><select id="d"><option>PC</option><option>Portátil</option><option>Móvil</option><option>Consola</option><option>Otro</option></select><label for="p">Describe el problema</label><textarea id="p" rows="4" required></textarea>
-<div class="cta"><button class="btn fill" type="submit">Enviar por correo</button><a class="btn" id="wa" href="#">WhatsApp</a></div><div class="msg" id="cm" role="status"></div></form></div>
-</div></div></section>
+<!-- CONTACTO -->
+<section id="contacto" class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10">
+ <div>
+  <h2 class="text-3xl font-extrabold text-slate-900">Hablemos</h2>
+  <form id="cForm" novalidate class="mt-6 space-y-4">
+   <div><label class="text-sm font-medium" for="cName">Nombre</label><input id="cName" class="field mt-1" autocomplete="name"><p class="text-sm text-red-600 mt-1 hidden" id="cNameE">Escribe tu nombre.</p></div>
+   <div><label class="text-sm font-medium" for="cMsg">Mensaje</label><textarea id="cMsg" rows="4" class="field mt-1"></textarea><p class="text-sm text-red-600 mt-1 hidden" id="cMsgE">Escribe un mensaje de al menos 10 caracteres.</p></div>
+   <button class="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-xl transition duration-300 hover:scale-105">Enviar mensaje</button>
+   <p id="cOk" class="hidden text-emerald-700 font-medium" role="status">Mensaje enviado. Te responderemos en menos de 24 horas laborables.</p>
+  </form>
+ </div>
+ <aside class="bg-white border border-slate-200 rounded-2xl p-6 self-start space-y-5">
+  <div><h3 class="font-bold text-slate-900">Oficina</h3><p class="text-slate-500">Calle Reyes Católicos 24, 18009 Granada (dirección ficticia)</p></div>
+  <div><h3 class="font-bold text-slate-900">Soporte técnico cloud</h3><a href="tel:+34900000000" class="text-orange-600 font-semibold hover:underline">+34 900 000 000</a></div>
+  <div><h3 class="font-bold text-slate-900">Horario de atención digital</h3><p class="text-slate-500">Lunes a viernes, 9:00–20:00. Chat 24/7 en la plataforma.</p></div>
+ </aside>
+</section>
 </main>
 
-<footer><div class="w"><div class="ct" style="margin-bottom:24px"><div><h3 style="font-size:14px">Boletín de ofertas</h3><form id="nl" class="row"><div><label for="ne" class="sr">Correo</label><input id="ne" type="email" placeholder="tu@correo.com" required></div><button class="btn" type="submit">Suscribirme</button></form><div class="msg" id="nm" role="status"></div></div><div class="lks"><button class="lk" data-lg="g">Garantía</button><button class="lk" data-lg="e">Envíos y devoluciones</button><button class="lk" data-lg="p">Privacidad</button><button class="lk" data-lg="c">Cookies</button><button class="lk" data-lg="a">Aviso legal</button></div></div><div class="fw"><span>AURUM © 2026 · Granada · CIF B-00000000 (ejemplo)</span><span>Garantía en cada reparación · Envío asegurado</span></div></div></footer>
+<!-- FOOTER -->
+<footer class="bg-slate-900 text-slate-400 py-12">
+ <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-sm">
+  <div><p class="font-extrabold text-white">ESTÉVEZ | PropTech</p><p class="mt-2">Reformas e Inmobiliaria Estévez. Vivienda y reformas, de principio a fin.</p>
+   <div class="mt-4 flex gap-3">
+    <a href="#" aria-label="LinkedIn" class="w-9 h-9 grid place-items-center rounded-full bg-slate-800 hover:bg-orange-600 hover:text-white transition duration-300"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4 9h4v11H4zM6 3.5A2.3 2.3 0 1 1 6 8a2.3 2.3 0 0 1 0-4.5zM10 9h3.8v1.6c.6-1 1.9-1.9 3.9-1.9 4 0 4.3 2.6 4.3 6V20h-4v-4.6c0-1.3 0-2.9-1.8-2.9S14 13.900 14 15.300V20h-4z"/></svg></a>
+    <a href="#" aria-label="Instagram" class="w-9 h-9 grid place-items-center rounded-full bg-slate-800 hover:bg-orange-600 hover:text-white transition duration-300"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="currentColor"/></svg></a>
+    <a href="#" aria-label="X" class="w-9 h-9 grid place-items-center rounded-full bg-slate-800 hover:bg-orange-600 hover:text-white transition duration-300"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+   </div></div>
+  <ul class="space-y-2"><li><a href="#" class="hover:text-white">Aviso legal</a></li><li><a href="#" class="hover:text-white">Política de privacidad</a></li><li><a href="#" class="hover:text-white">Política de cookies</a></li></ul>
+  <ul class="space-y-2">
+   <li class="flex gap-2"><span class="text-tech">✔</span> Cumplimiento RGPD</li>
+   <li class="flex gap-2"><span class="text-tech">✔</span> Encriptación Cloud AES-256</li>
+   <li class="flex gap-2"><span class="text-tech">✔</span> Certificación eIDAS</li></ul>
+ </div>
+ <p class="max-w-6xl mx-auto px-4 mt-8 text-xs text-slate-500">© 2026 Reformas e Inmobiliaria Estévez. Todos los derechos reservados.</p>
+</footer>
 
-<aside id="drawer" aria-label="Carrito"><div class="row" style="justify-content:space-between;align-items:center"><h3>Tu carrito</h3><button class="x" id="cx" aria-label="Cerrar">✕</button></div><ul id="cl"></ul><p id="ce" style="color:var(--mut)">Tu carrito está vacío.</p><div class="tl t" id="sub"></div><p style="font-size:12px;color:var(--mut);margin:0">Envío y total final se calculan en el pago.</p><button class="btn fill" id="ck" type="button">Finalizar compra</button></aside>
-<div id="co" role="dialog" aria-modal="true" aria-label="Finalizar compra"><div class="cob" id="cob"></div></div>
+<script>
+(()=>{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 
-<div id="md" role="dialog" aria-modal="true" aria-label="Detalle"></div>
-<div id="cmpbar"></div>
-<div id="cookie" role="region" aria-label="Aviso de almacenamiento"><span>Esta web guarda tu carrito y favoritos en tu navegador. <button class="lk" data-lg="c">Más info</button></span><button class="btn fill" id="cka" type="button">Entendido</button></div>
-<a class="callfab" href="tel:+34958000123" aria-label="Llamar a la tienda">Llamar</a>
-<script src="script.js"></script>
+// Menú móvil
+const burger=$('#burger'),menu=$('#menu');
+burger.onclick=()=>{const o=menu.classList.toggle('hidden')===false;burger.setAttribute('aria-expanded',o)};
+$$('#menu a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<768){menu.classList.add('hidden');burger.setAttribute('aria-expanded','false')}}));
+
+// Gemelo digital
+const FIN={nordico:{label:'Acabado Nórdico',next:'Acabado Industrial',wall:'bg-stone-100',cab:'bg-white',isl:'bg-amber-100',floor:'bg-amber-200'},
+ industrial:{label:'Acabado Industrial',next:'Acabado Nórdico',wall:'bg-slate-600',cab:'bg-slate-900',isl:'bg-zinc-800',floor:'bg-zinc-500'}};
+let finish='nordico';
+const twin=()=>{const f=FIN[finish];
+ $('#twinWall').className='relative h-56 rounded-2xl overflow-hidden transition-colors duration-500 '+f.wall;
+ $('#twinCab').className='absolute top-6 left-4 right-4 h-14 rounded-lg transition-colors duration-500 shadow '+f.cab;
+ $('#twinIsland').className='absolute bottom-12 left-1/4 w-1/2 h-14 rounded-lg transition-colors duration-500 shadow-lg '+f.isl;
+ $('#twinFloor').className='absolute bottom-0 inset-x-0 h-10 transition-colors duration-500 '+f.floor;
+ $('#twinLabel').textContent=f.label;$('#twinBtn').textContent='Cambiar a '+f.next};
+$('#twinBtn').onclick=()=>{finish=finish==='nordico'?'industrial':'nordico';twin()};twin();
+
+// Buscador
+const PRICE={Comprar:[210000,'€'],Alquilar:[850,'€/mes'],Reformar:[14900,'€ desde']};
+let searching=false;
+$('#searchForm').addEventListener('submit',e=>e.preventDefault());
+$('#sBtn').onclick=e=>{e.preventDefault();if(searching)return;searching=true;
+ const op=$('#sOp').value,ty=$('#sType').value,lo=$('#sLoc').value,out=$('#sOut'),btn=$('#sBtn');
+ btn.disabled=true;btn.classList.add('opacity-60');
+ out.innerHTML='<div class="flex items-center gap-3 text-slate-500"><span class="w-6 h-6 border-4 border-slate-200 border-t-orange-600 rounded-full animate-spin"></span>Consultando la base de datos en la nube…</div>';
+ setTimeout(()=>{
+  const [base,unit]=PRICE[op],bump={Piso:1,Casa:1.6,Ático:1.9,Local:1.3}[ty]*({Granada:1,Málaga:1.35,Sevilla:1.15,Madrid:1.7,Barcelona:1.8}[lo]);
+  const val=Math.round(base*bump/(op==='Alquilar'?10:1000))*(op==='Alquilar'?10:1000);
+  const price=op==='Reformar'?'Desde '+val.toLocaleString('es-ES')+' €':val.toLocaleString('es-ES')+' '+unit;
+  const title=op==='Reformar'?'Reforma integral de '+ty.toLowerCase():ty+' en '+(op==='Comprar'?'venta':'alquiler');
+  out.innerHTML='';
+  const c=document.createElement('article');c.className='bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col sm:flex-row gap-6 items-start sm:items-center';
+  c.innerHTML='<div class="w-full sm:w-40 h-28 rounded-xl bg-gradient-to-br from-tech to-slate-800 grid place-items-center text-white font-bold">Tour 360°</div><div class="flex-1"><span class="text-xs font-bold bg-tech/15 text-cyan-800 px-2 py-1 rounded-full">Resultado de ejemplo</span><h3 class="mt-2 text-xl font-bold text-slate-900"></h3><p class="text-slate-500 loc"></p><p class="mt-2 text-2xl font-extrabold text-orange-600 pr"></p></div><a href="#configurador" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-5 py-3 rounded-xl transition duration-300 hover:scale-105">Quiero más información</a>';
+  c.querySelector('h3').textContent=title;c.querySelector('.loc').textContent=lo+' · '+(op==='Reformar'?'Presupuesto 3D incluido':'Visita virtual disponible');c.querySelector('.pr').textContent=price;
+  out.appendChild(c);btn.disabled=false;btn.classList.remove('opacity-60');searching=false},1500)};
+
+// Pisos 3D
+const KEY={l:'#e2e8f0',c:'#fed7aa',d:'#bae6fd',b:'#a5f3fc',t:'#bbf7d0'};
+const APT=[
+ {n:'Estudio Albaicín',m:38,bd:1,ba:1,p:'129.000 €',d:'Un solo ambiente luminoso con la zona de noche separada.',
+  r:[['Salón-cocina',0,0,60,64,'l'],['Dormitorio',60,0,40,40,'d'],['Baño',60,40,40,24,'b']],
+  f:[[6,8,22,10,3,'#475569'],[30,32,14,12,2,'#b45309'],[66,6,26,24,2,'#00b4d8'],[4,52,40,8,4,'#94a3b8'],[64,46,32,8,2,'#f8fafc']]},
+ {n:'Piso Centro',m:72,bd:2,ba:1,p:'215.000 €',d:'Distribución compacta con cocina abierta al salón.',
+  r:[['Salón',0,0,48,40,'l'],['Cocina',0,40,48,24,'c'],['Dormitorio principal',48,0,52,32,'d'],['Baño',48,32,22,32,'b'],['Dormitorio 2',70,32,30,32,'d']],
+  f:[[6,8,24,10,3,'#475569'],[14,24,16,10,2,'#b45309'],[3,44,42,8,4,'#94a3b8'],[62,6,26,18,2,'#00b4d8'],[50,54,18,7,2,'#f8fafc'],[76,38,20,12,2,'#00b4d8']]},
+ {n:'Ático con terraza',m:110,bd:2,ba:1,p:'389.000 €',d:'Salón con salida directa a una terraza privada.',
+  r:[['Salón',0,0,40,40,'l'],['Terraza',40,0,20,40,'t'],['Suite',60,0,40,34,'d'],['Baño',60,34,20,30,'b'],['Dormitorio 2',80,34,20,30,'d'],['Cocina',0,40,30,24,'c'],['Comedor',30,40,30,24,'l']],
+  f:[[5,6,26,10,3,'#475569'],[44,12,12,8,2,'#f59e0b'],[36,46,18,10,2,'#b45309'],[3,46,24,8,4,'#94a3b8'],[66,6,26,20,2,'#00b4d8'],[63,54,14,7,2,'#f8fafc'],[83,40,14,16,2,'#00b4d8']]}];
+const mk=(c,s)=>{const e=document.createElement('div');e.className=c;if(s)e.style.cssText=s;return e};
+let cur=0;const tabs=$('#aptTabs');
+APT.forEach((a,i)=>{const b=document.createElement('button');b.type='button';b.textContent=a.n;b.onclick=()=>{cur=i;plan()};tabs.appendChild(b)});
+function plan(){const a=APT[cur],P=$('#plan');P.innerHTML='';
+ [...tabs.children].forEach((b,i)=>{b.setAttribute('aria-pressed',i===cur);b.className='px-4 py-2 rounded-full text-sm font-semibold transition duration-300 '+(i===cur?'bg-tech text-slate-900':'bg-slate-800 text-slate-300 hover:bg-slate-700')});
+ a.r.forEach(([nm,x,y,w,h,k])=>{
+  const R=mk('rm','left:'+x+'%;top:'+y+'%;width:'+w+'%;height:'+h+'%;background:'+KEY[k]),L=k==='t'?2:6;
+  for(let i=1;i<=L;i++)R.appendChild(mk('wl','transform:translateZ('+i*5+'px);'+(i===L?'border-color:#f8fafc':'')));
+  const lb=mk('lb'),sp=document.createElement('span');sp.textContent=nm;lb.appendChild(sp);R.appendChild(lb);P.appendChild(R)});
+ if($('#furn').checked)a.f.forEach(([x,y,w,h,z,c])=>{
+  const F=mk('fn','left:'+x+'%;top:'+y+'%;width:'+w+'%;height:'+h+'%');
+  for(let i=1;i<=z;i++)F.appendChild(mk('fl','background:'+c+';transform:translateZ('+i*3+'px);'+(i===z?'filter:brightness(1.25)':'')));
+  P.appendChild(F)});
+ $('#aptInfo').innerHTML='<h3 class="text-xl font-bold text-slate-900">'+a.n+'</h3><p class="text-slate-500 text-sm">'+a.m+' m² · '+a.bd+' dorm. · '+a.ba+' baño</p><p class="mt-3 text-2xl font-extrabold text-orange-600">'+a.p+'</p><p class="mt-2 text-sm text-slate-600">'+a.d+'</p><ul class="mt-4 text-sm divide-y divide-slate-100">'+a.r.map(([nm,x,y,w,h])=>'<li class="flex justify-between py-1.5"><span>'+nm+'</span><span class="text-slate-500">'+Math.round(w*h/6400*a.m)+' m²</span></li>').join('')+'</ul><a href="#configurador" class="block text-center mt-5 bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 rounded-xl transition duration-300 hover:scale-105">Pedir tour 360° de este piso</a>'}
+$('#rz').oninput=e=>$('#plan').style.setProperty('--rz',e.target.value+'deg');
+$('#rx').oninput=e=>$('#plan').style.setProperty('--rx',e.target.value+'deg');
+$('#furn').onchange=plan;plan();
+
+// Configurador multi-paso
+let step=1;const form=$('#wiz'),COL=['bg-tech','bg-orange-500','bg-emerald-500'];
+const show=(n,msg)=>{const el=form.querySelector('.err[data-for="'+n+'"]');if(el)el.classList.toggle('hidden',!msg)};
+const bad=(id,b)=>{const el=$(id);if(el){el.classList.toggle('bad',b);el.setAttribute('aria-invalid',b)}};
+const validate=n=>{let ok=true;
+ if(n===1){const g=form.goal.value;show('goal',!g);ok=!!g}
+ if(n===2){const nm=form.name.value.trim().length>=2,em=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(form.email.value.trim()),
+  ph=/^(\+34|0034)?[\s-]?[6-9](?:[\s-]?\d){8}$/.test(form.phone.value.trim());
+  show('name',!nm);show('email',!em);show('phone',!ph);bad('#wName',!nm);bad('#wMail',!em);bad('#wTel',!ph);ok=nm&&em&&ph}
+ if(n===3){const b=!!form.budget.value,t=!!form.time.value,r=form.rgpd.checked;
+  show('budget',!b);show('time',!t);show('rgpd',!r);bad('#wBud',!b);bad('#wTime',!t);ok=b&&t&&r}
+ return ok};
+const render=()=>{$$('[data-step]').forEach(s=>s.classList.toggle('hidden',+s.dataset.step!==step));
+ const p=Math.round(step/3*100);$('#wBar').style.width=p+'%';$('#wBar').className='h-full rounded-full transition-all duration-500 '+COL[step-1];
+ $('#wPct').textContent=p+'%';$('#wLabel').textContent='Paso '+step+' de 3';$('#wBarWrap').setAttribute('aria-valuenow',p);
+ $('#wPrev').classList.toggle('invisible',step===1);$('#wNext').classList.toggle('hidden',step===3);$('#wSend').classList.toggle('hidden',step!==3)};
+$('#wNext').onclick=()=>{if(validate(step)){step++;render()}};
+$('#wPrev').onclick=()=>{step--;render()};
+form.addEventListener('input',()=>{if(form.querySelector('.bad,.err:not(.hidden)'))validate(step)});
+form.addEventListener('change',()=>{if(form.querySelector('.err:not(.hidden)'))validate(step)});
+form.addEventListener('submit',e=>{e.preventDefault();
+ if(![1,2,3].every(validate)){step=[1,2,3].find(n=>!validate(n));render();return}
+ $('#wSend').disabled=true;
+ const data=Object.fromEntries(new FormData(form));console.info('Proyecto (simulado, conectar con tu API):',data);
+ form.classList.add('hidden');
+ $('#wOkTxt').textContent='Gracias, '+data.name.trim().split(' ')[0]+'. Un asesor te escribirá a '+data.email.trim()+' para tu proyecto de '+data.goal.toLowerCase()+'.';
+ $('#wOk').classList.remove('hidden');$('#wOk').scrollIntoView({block:'center'})});
+$('#wReset').onclick=()=>{form.reset();step=1;form.classList.remove('hidden');$('#wSend').disabled=false;$('#wOk').classList.add('hidden');$$('.field').forEach(f=>f.classList.remove('bad'));render()};
+render();
+
+// FAQ (acordeón independiente)
+$$('.faq').forEach(b=>b.onclick=()=>{const p=$('#'+b.getAttribute('aria-controls')),open=p.classList.toggle('hidden')===false;
+ b.setAttribute('aria-expanded',open);b.querySelector('svg').style.transform=open?'rotate(180deg)':''});
+
+// Contacto
+$('#cForm').addEventListener('submit',e=>{e.preventDefault();
+ const n=$('#cName').value.trim().length>=2,m=$('#cMsg').value.trim().length>=10;
+ $('#cNameE').classList.toggle('hidden',n);$('#cMsgE').classList.toggle('hidden',m);
+ $('#cName').classList.toggle('bad',!n);$('#cMsg').classList.toggle('bad',!m);
+ if(n&&m){$('#cOk').classList.remove('hidden');e.target.reset()}else $('#cOk').classList.add('hidden')});
+})();
+</script>
 </body>
 </html>
